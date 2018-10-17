@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 
 import { simpleAction } from './actions/simpleAction'
 
@@ -19,10 +19,10 @@ class App extends Component {
      <h1 className="App-title">Welcome to React</h1>
     </header>
     <p className="App-intro">
-    <pre> {
+    <> {
         JSON.stringify(this.props)
       } 
-    </pre>
+    </>
     <button onClick={this.simpleAction}>Test redux action</button>
      To get started, edit <code>src/App.js</code> and save to reload
     </p>
