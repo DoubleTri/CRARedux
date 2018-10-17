@@ -17,13 +17,13 @@ class App extends Component {
     <header className="App-header">
      <img src={logo} className="App-logo" alt="logo" />
      <h1 className="App-title">Welcome to React</h1>
-      <p className="App-intro">
+      <div className="App-intro">
         <> 
           {JSON.stringify(this.props)} 
         </>
         <button onClick={this.simpleAction}>Test redux action</button>
         <p>To get started, edit <code>src/App.js</code> and save to reload</p>
-      </p>
+      </div>
     </header>
    </div>
   );
