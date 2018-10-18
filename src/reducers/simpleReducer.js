@@ -1,8 +1,10 @@
-export default (state = {}, action) => {
+const initState = 'here is the initial state....'
+
+export default (state = initState, action) => {
     switch (action.type) {
      case 'SIMPLE_ACTION':
       return {
-       result: action.payload
+       result: action.payload.test 
       }
      default:
       return state

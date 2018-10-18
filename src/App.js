@@ -19,7 +19,7 @@ class App extends Component {
      <h1 className="App-title">Welcome to React</h1>
       <div className="App-intro">
         <> 
-          {JSON.stringify(this.props)} 
+          {JSON.stringify(this.props.simpleReducer.result)} 
         </>
         <button onClick={this.simpleAction}>Test redux action</button>
         <p>To get started, edit <code>src/App.js</code> and save to reload</p>
