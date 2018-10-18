@@ -24,11 +24,13 @@ class App extends Component {
      <img src={logo} className="App-logo" alt="logo" />
      <h1 className="App-title" style={{color: this.props.simpleReducer.result}}>Welcome to React</h1>
       <div className="App-intro">
-        <> 
+        {/* <> 
           {JSON.stringify(this.props.simpleReducer.result)} 
-        </>
+        </> */}
         <button onClick={this.simpleAction}>Test redux action</button>
         <SwatchesPicker onChange={ this.simpleAction } />
+        <ul>{this.props.simpleReducer.pastColor.map((color, i) => <li key={i} style={{color: color}}>{color}</li>)}
+        </ul>
       </div>
     </header>
    </div>
