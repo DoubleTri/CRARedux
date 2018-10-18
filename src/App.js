@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import logo from './logo.svg';
+import { SwatchesPicker  } from 'react-color';
 import './App.scss';
 
 import { simpleAction } from './actions/simpleAction'
 
 class App extends Component {
+
+  handleChange(color, event) {
+    console.log("color: " + color.hex)
+  }
 
   simpleAction = (event) => {
     this.props.simpleAction();
@@ -22,7 +27,7 @@ class App extends Component {
           {JSON.stringify(this.props.simpleReducer.result)} 
         </>
         <button onClick={this.simpleAction}>Test redux action</button>
-        <p>To get started, edit <code>src/App.js</code> and save to reload</p>
+        <SwatchesPicker onChange={ this.handleChange } />
       </div>
     </header>
    </div>
