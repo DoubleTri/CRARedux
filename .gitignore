@@ -3,6 +3,9 @@
 # dependencies
 /node_modules
 
+#firebase info
+src/firebase.js
+
 # testing
 /coverage
 
