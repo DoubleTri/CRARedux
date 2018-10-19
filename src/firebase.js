@@ -12,6 +12,8 @@ var config = {
 
 export const app = firebase.initializeApp(config);
 
+export const db = firebase.database().ref();
+
 export const auth = firebase.auth();
 
 export const storage = firebase.storage();

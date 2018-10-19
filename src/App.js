@@ -4,7 +4,7 @@ import logo from './logo.svg';
 import { SwatchesPicker  } from 'react-color';
 import './App.scss';
 
-import { simpleAction } from './actions/simpleAction'
+import { simpleAction, add } from './actions/simpleAction'
 
 class App extends Component {
 
@@ -13,7 +13,7 @@ class App extends Component {
   }
 
   simpleAction = (color, event) => {
-    this.props.simpleAction(color.hex);
+    this.props.add(color.hex);
     console.log(this.props.simpleReducer.result)
    }
 
@@ -43,7 +43,8 @@ const mapStateToProps = state => ({
  })
 
 const mapDispatchToProps = dispatch => ({
-  simpleAction: (color) => dispatch(simpleAction(color))
+  simpleAction: (color) => dispatch(simpleAction(color)),
+  add: (color) => dispatch(add(color))
  })
 
 
