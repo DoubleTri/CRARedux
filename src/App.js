@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { db } from "./firebase";
 import logo from './logo.svg';
 import { SwatchesPicker  } from 'react-color';
 import './App.scss';
@@ -7,6 +8,12 @@ import './App.scss';
 import { simpleAction, add } from './actions/simpleAction'
 
 class App extends Component {
+
+  componentWillMount() {
+    db.on("value", snap => { 
+      this.props.simpleAction(snap.child('result').val());
+    })
+  }
 
   handleChange(color, event) {
     console.log("color: " + color.hex)
