@@ -29,8 +29,8 @@ class App extends Component {
         </> */}
         <button onClick={this.simpleAction}>Test redux action</button>
         <SwatchesPicker onChange={ this.simpleAction } />
-        <ul>{this.props.simpleReducer.pastColor.map((color, i) => <li key={i} style={{color: color}}>{color}</li>)}
-        </ul>
+        {/* <ul>{this.props.simpleReducer.pastColor.map((color, i) => <li key={i} style={{color: color}}>{color}</li>)}
+        </ul> */}
       </div>
     </header>
    </div>
