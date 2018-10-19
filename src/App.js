@@ -11,7 +11,7 @@ class App extends Component {
 
   componentWillMount() {
     db.on("value", snap => { 
-      this.props.simpleAction(snap.child('result').val());
+      this.props.simpleAction(snap.val());
     })
   }
 
@@ -19,9 +19,8 @@ class App extends Component {
     console.log("color: " + color.hex)
   }
 
-  simpleAction = (color, event) => {
+  add = (color, event) => {
     this.props.add(color.hex);
-    console.log(this.props.simpleReducer.result)
    }
 
  render() {
@@ -31,13 +30,14 @@ class App extends Component {
      <img src={logo} className="App-logo" alt="logo" />
      <h1 className="App-title" style={{color: this.props.simpleReducer.result}}>Welcome to React</h1>
       <div className="App-intro">
-        {/* <> 
-          {JSON.stringify(this.props.simpleReducer.result)} 
-        </> */}
         <button onClick={this.simpleAction}>Test redux action</button>
-        <SwatchesPicker onChange={ this.simpleAction } />
-        {/* <ul>{this.props.simpleReducer.pastColor.map((color, i) => <li key={i} style={{color: color}}>{color}</li>)}
-        </ul> */}
+        <SwatchesPicker onChange={ this.add } />
+        <ul>{this.props.simpleReducer.pastColor ? Object.values(this.props.simpleReducer.pastColor).map((color, i) => 
+          <li key={i} style={{color: color}}>{color}</li>)
+        :
+        "loading...."
+        }
+        </ul>
       </div>
     </header>
    </div>
@@ -50,7 +50,7 @@ const mapStateToProps = state => ({
  })
 
 const mapDispatchToProps = dispatch => ({
-  simpleAction: (color) => dispatch(simpleAction(color)),
+  simpleAction: (obj) => dispatch(simpleAction(obj)),
   add: (color) => dispatch(add(color))
  })
 

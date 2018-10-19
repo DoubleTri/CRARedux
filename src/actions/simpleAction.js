@@ -10,11 +10,11 @@ export const completeToDo = completeToDoId => async dispatch => {
     db.remove();
 };
 
-export const simpleAction = (color) => async dispatch => {
-    db.on("value", snapshot => {
+export const simpleAction = (obj) => async dispatch => {
+    db.once("value", snapshot => {
         dispatch({
             type: 'SIMPLE_ACTION',
-            payload: color
+            payload: {result: obj.result, pastColor: obj.pastColor}
         })
     })
 }
