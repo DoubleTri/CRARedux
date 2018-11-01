@@ -2,12 +2,12 @@ import * as firebase from 'firebase';
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyAjf5jn0DceNFnYP6nNYyRgIt0iNSDo744",
-  authDomain: "craredux.firebaseapp.com",
-  databaseURL: "https://craredux.firebaseio.com",
-  projectId: "craredux",
-  storageBucket: "craredux.appspot.com",
-  messagingSenderId: "448451753153"
+  apiKey: "****",
+  authDomain: "****",
+  databaseURL: "****",
+  projectId: "****",
+  storageBucket: "****",
+  messagingSenderId: "****"
   };
 
 export const app = firebase.initializeApp(config);
